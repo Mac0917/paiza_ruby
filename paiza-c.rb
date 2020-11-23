@@ -436,3 +436,56 @@ p_r_ask.sort!
 p_r_ask.each do |p_r|
     puts p_r.join(" ")
 end
+
+
+puts "c 条件を満たす自然数"
+num = rand(10000..10012)
+while num%13 != 0 do 
+    num = rand(10000..10012)
+end
+puts num
+
+num = 10000
+while num%13 != 0 do
+    num += 1
+end
+puts num
+
+
+puts "c シュミレーションの練習"
+n = gets.to_i
+ab = gets.split
+a = ab[0].to_i
+b = ab[1].to_i
+paiza = 1
+kyoko = 1
+i = 0
+while kyoko <= n
+    kyoko += paiza*a
+    paiza += kyoko%b
+    i += 1
+end
+puts i
+
+
+puts "c シュミレーション2"
+H = gets.to_i
+i = 1
+paiza_attack = {}
+monster_attack = {}
+while 0<H do
+    if i==1 || i==2
+        paiza_attack[i] = 1
+    else 
+        paiza_attack[i] = monster_attack[i-1] + monster_attack[i-2]
+    end
+    if i==1 || i==2
+        monster_attack[i] = 1
+    else
+        monster_attack[i] = paiza_attack[i-1]*2 + paiza_attack[i-2]
+    end
+    H -= monster_attack[i]
+    i += 1
+end
+puts i-1
+    
