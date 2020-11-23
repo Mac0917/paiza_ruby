@@ -232,6 +232,7 @@ n.times do
 end
 k = gets.to_i
 puts array.index(k).to_i + 1
+# indexは配列の場合はその要素が最初の要素から何番目にあるのかを整数で返すメソッド
 
 
 puts "d 多重ループ"
@@ -275,6 +276,7 @@ end
 like_array.each do |like|
     puts like.count(K)
 end
+# [1,3,4,1].count(3) => 1 [1,3,4,1].count(1) => 2
 
 
 puts "d ソート"
